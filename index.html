@@ -26,34 +26,38 @@
       <div class="row align-items-center g-lg-8 py-5">
         <div class="col-md-10 mx-auto col-lg-8">
           <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" id="form1" onsubmit="submitForm(event)" method="POST">
-            <div class="row">
-              <div class="col-md-4">
+            <div class="row mb-5">
+              <div class="col-sm-12">
                 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="moeda_base" name="moeda_base">
                   <option selected>Moeda base</option>
                 </select>
               </div>
-              <div class="col-md-8">
+              <div class="col-sm-12">
                 <div class="form-floating mb-3">
                   <input type="number" class="form-control" id="valor_conversao" placeholder="10" name="valor_conversao">
                   <label for="valor_conversao">Valor para conversão</label>
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-4">
+            <div class="row mb-3">
+              <div class="col-sm-12">
                 <select class="form-control form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="moeda_destino" name="moeda_destino">
                   <option selected>Moeda destino</option>
                 </select>
               </div>
-              <div class="col-md-8">
+              <div class="col-sm-12">
                 <div class="form-floating mb-3">
                   <input type="number" class="form-control" placeholder="10" disabled readonly id="valor_convertido" name="valor_convertido">
                   <label for="valor_convertido">Valor convertido</label>
                 </div>
               </div>
             </div>
-            <div class="row justify-content-center">
-              <button type="submit" class="btn btn-outline-primary">Converter valor</button>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-outline-primary">Converter valor</button>
+                </div>
+              </div>
             </div>
           </form>
         </div>

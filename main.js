@@ -1,9 +1,4 @@
 loadCurrencies();
-// var element = document.getElementById("form1")
-// element.addEventListener("submit", function(evt) {
-//     evt.preventDefault();
-//     submitForm(evt);
-// });
 
 function submitForm($event) {
     $event.preventDefault();
@@ -18,15 +13,15 @@ function submitForm($event) {
         "http://localhost:8080/convert",
         {
             method: "POST",
-            mode: "no-cors",
+            body: JSON.stringify(dto),
             headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(dto)
+                'Content-type': 'application/json; charset=UTF-8'
+            }
         }
     )
-    .then((response) => response.json(), (err) => console.error(err))
-    .then((apiResponse) => console.log(apiResponse), (errApi) => console.error(errApi));
+        .then(T => T.json())
+        .then((apiResponse) => atualizarValorConvertido(apiResponse))
+        .catch((errorResponse) => console.error(errorResponse));
 
 }
 
@@ -65,4 +60,9 @@ function loadCurrencies() {
             });
         });
 
+}
+
+function atualizarValorConvertido(responseDTO) {
+    var inputValorConvertido = document.getElementById("valor_convertido");
+    inputValorConvertido.value = responseDTO.amount_converted;
 }
